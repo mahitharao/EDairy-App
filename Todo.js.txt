@@ -1,0 +1,39 @@
+// Todo.js
+import React, { useState } from 'react';
+
+function Todo() {
+  const [todoList, setTodoList] = useState([]);
+  const [newTodo, setNewTodo] = useState('');
+
+  const handleNewTodoChange = (event) => {
+    setNewTodo(event.target.value);
+  };
+
+  const handleAddTodo = () => {
+    setTodoList([...todoList, newTodo]);
+    setNewTodo('');
+  };
+
+  return (
+    <div>
+      <h2>To-Do List</h2>
+      <form>
+        <label>
+          New Todo:
+          <input type="text" value={newTodo} onChange={handleNewTodoChange} />
+        </label>
+        <br />
+        <button type="button" onClick={handleAddTodo}>
+          Add Todo
+        </button>
+        <ul>
+          {todoList.map((todo, index) => (
+            <li key={index}>{todo}</li>
+          ))}
+        </ul>
+      </form>
+    </div>
+  );
+}
+
+export default Todo;

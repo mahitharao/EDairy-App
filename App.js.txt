@@ -1,0 +1,17 @@
+// App.js
+import React from 'react';
+import Bio from './components/Bio';
+import Diary from './components/Diary';
+import Todo from './components/Todo';
+
+function App() {
+  return (
+    <div>
+      <Bio />
+      <Diary />
+      <Todo />
+    </div>
+  );
+}
+
+export default App;

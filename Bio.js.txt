@@ -1,0 +1,46 @@
+ Bio.js
+import React, { useState } from 'react';
+
+function Bio() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [profilePicture, setProfilePicture] = useState('');
+
+  const handleNameChange = (event) = {
+    setName(event.target.value);
+  };
+
+  const handleEmailChange = (event) = {
+    setEmail(event.target.value);
+  };
+
+  const handleProfilePictureChange = (event) = {
+    setProfilePicture(event.target.value);
+  };
+
+  return (
+    div
+      h2Bio and Personal Informationh2
+      form
+        label
+          Name
+          input type=text value={name} onChange={handleNameChange} 
+        label
+        br 
+        label
+          Email
+          input type=email value={email} onChange={handleEmailChange} 
+        label
+        br 
+        label
+          Profile Picture
+          input type=file value={profilePicture} onChange={handleProfilePictureChange} 
+        label
+        br 
+        button type=submitSavebutton
+      form
+    div
+  );
+}
+
+export default Bio;
